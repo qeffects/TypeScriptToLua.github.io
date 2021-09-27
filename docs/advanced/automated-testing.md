@@ -1,9 +1,8 @@
 ---
-title: Automated Testing
+title: Unit Testing
 ---
 
-import { SideBySide } from "@site/src/components/SideBySide";
-import { DeprecatedInVersion } from "@site/src/components/DeprecatedInVersion";
+## Getting started
 
 This guide is going to explore unit testing, it’s assuming some familiarity with the subject, but it’s not required.
 
@@ -27,9 +26,11 @@ export const libraryFunction = (param: number[], reverse: boolean) => {
 };
 ```
 
-So our function takes an array of numbers like “[1,2,3,4]” and returns a string like “1,2,3,4” or “4,3,2,1”This is where unit testing comes in, say a piece of code depends on this function working like it does, and for it to keep working exactly like it does right now, obviously you could use the tried and true method of doing the testing yourself, but unit testing provides an alternative to the manual work.
+So our function takes an array of numbers like “[1,2,3,4]” and returns a string like “1,2,3,4” or “4,3,2,1”.
 
-So, automated testing, where do we begin?
+This is where unit testing comes in, say a piece of code depends on this function working like it does, and for it to keep working exactly like it does right now, obviously you could use the tried and true method of doing the testing yourself, but unit testing provides an alternative to the manual work.
+
+So, unit testing, where do we begin?
 
 To start off we’re going to need these tools installed:
 
@@ -81,7 +82,9 @@ describe("Library Function", () => {
 });
 ```
 
-So the short version of what’s happening there is the ‘describe’ block is our named collection of tests, this block pertains to the library function and library function alone, next we call it(‘’,()=>{}) in there to name and describe the behaviour of a single test, it’s a regular function so you can call and do anything in there. Right here, we’re just using a function in the assert namespace which passes the test if the 2 parameters are exactly equal, and fails if they’re different.
+So the short version of what’s happening there is the ‘describe’ block is our named collection of tests, this collection tests the library function, so we've named it `"Library Function"`
+
+Next we call it(‘’,()=>{}) in there to name and describe the behaviour of a single test, it’s a regular function, so you can call and do anything in there. Here, we’re just using a function in the assert namespace which passes the test if the 2 parameters are exactly equal, and fails if they’re different.
 
 Alright, so we call our libraryFunction with a set of parameters, and get back some return, then we assert that the return value is equal to a known (correct) value. For illustration let’s add another test, since we have a second signature of the function that returns a reversed string, we can try that:
 
@@ -92,13 +95,13 @@ describe("Library Function", () => {
   it("Returns unreversed string correctly", () => {
     assert.is_equal("1,2,3,4", libraryFunction([1, 2, 3, 4], false));
   });
-  it("Returns unreversed string correctly", () => {
+  it("Returns reversed string correctly", () => {
     assert.is_equal("4,3,2,1", libraryFunction([1, 2, 3, 4], true));
   });
 });
 ```
 
-Now hit compile and change your terminal’s directory in to your tstl output folder, for me it’s the `dist` folder.
+Now hit compile and change your terminals directory in to your tstl output folder, for me it’s the `dist` folder.
 We can now just simply run `busted`, and you should see something like this:
 
 ![Project setup](/images/busted-output.png)
@@ -201,7 +204,7 @@ This section applies to projects described in [Publishing Modules](publishing-mo
 
 _(arrows are to indicate the changes, don't include them in the actual code)_
 
-Now you can use this new tsconfig like: `tstl —project tsconfig.test.json`
+Now you can use this new tsconfig like: `tstl —-project tsconfig.test.json`
 
 It will output the new build in to the testing folder and you can move your terminal in to the folder and run busted
 
