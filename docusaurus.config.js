@@ -3,7 +3,7 @@ module.exports = {
     title: "TypeScriptToLua",
     organizationName: "TypeScriptToLua",
     url: "https://typescripttolua.github.io",
-    baseUrl: "/",
+    baseUrl: "/TypeScriptToLua.github.io/",
     favicon: "images/favicon.ico",
     themeConfig: {
         navbar: {
