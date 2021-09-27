@@ -4,8 +4,8 @@
   <ShortName>TypeScriptToLua</ShortName>
   <Description>Search TypeScriptToLua</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://typescripttolua.github.io/images/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://typescripttolua.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://typescripttolua.github.io/opensearch.xml" />
-  <moz:SearchForm>https://typescripttolua.github.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://typescripttolua.github.io/TypeScriptToLua.github.io/images/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://typescripttolua.github.io/TypeScriptToLua.github.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://typescripttolua.github.io/TypeScriptToLua.github.io/opensearch.xml" />
+  <moz:SearchForm>https://typescripttolua.github.io/TypeScriptToLua.github.io/</moz:SearchForm>
 </OpenSearchDescription>
